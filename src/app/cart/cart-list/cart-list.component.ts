@@ -14,7 +14,7 @@ export class CartListComponent {
   pageTitle = 'Cart';
 
   // Updated: for DI of service for a StandAlone Component
-  cartService = Inject(CartService)
+  private cartService = Inject(CartService)
 
   cartItems = this.cartService.cartItems;
 }

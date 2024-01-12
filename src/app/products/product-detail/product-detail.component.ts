@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 
 import { NgIf, NgFor, CurrencyPipe, AsyncPipe } from '@angular/common';
 import { Product } from '../product';
 import { EMPTY, catchError } from 'rxjs';
 import { ProductService } from '../product.service';
+import { CartService } from 'src/app/cart/cart.service';
 
 @Component({
   selector: 'pm-product-detail',
@@ -29,6 +30,10 @@ export class ProductDetailComponent {
   // pageTitle = this.product ? `Product Detail for: ${this.product.productName}` : 'Product Detail';
   pageTitle = 'ProductDetail';
 
+  // Updated: for DI of service for a StandAlone Component
+  private cartService = Inject(CartService);
+
   addToCart(product: Product) {
+    this.cartService.addToCart(product); // button
   }
 }
