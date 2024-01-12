@@ -4,6 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project Introduction
 
-### Module 11:1 Define the Cart
+### Module 11:1 Define the Cart (module 1)
 
 ### Add Products to the Cart
