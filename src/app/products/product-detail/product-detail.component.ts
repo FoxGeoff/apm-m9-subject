@@ -31,9 +31,9 @@ export class ProductDetailComponent {
   pageTitle = 'ProductDetail';
 
   // Updated: for DI of service for a StandAlone Component
-  private cartService = Inject(CartService);
+  private cartService = inject(CartService);
 
   addToCart(product: Product) {
-    this.cartService.addToCart(product); // button
+    this.cartService.addToCart(product); //button click
   }
 }

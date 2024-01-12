@@ -24,3 +24,28 @@ export class CartListComponent {
 1. Update service
 2. Update ProductDetailComponent
 3. Run from menu `Run/Start Debug`  and check `DEBUG CONSOLE` window
+
+### Add Signal.update()
+
+```typescript
+//IS
+export class CartService {
+  cartItems = signal<CartItem[]>([]);
+
+  eLength =effect(()=> console.log(`Carte array length ${this.cartItems().length}`));
+
+  addToCart(product: Product): void {
+    this.cartItems().push({product, quantity: 1});
+  }
+}
+//WAS
+export class CartService {
+  cartItems = signal<CartItem[]>([]);
+
+  eLength =effect(()=> console.log(`Carte array length ${this.cartItems().length}`));
+
+  addToCart(product: Product): void {
+    this.cartItems().push({product, quantity: 1});
+  }
+}
+```
