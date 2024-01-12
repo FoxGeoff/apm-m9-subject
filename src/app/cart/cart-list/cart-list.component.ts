@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { CartItem } from '../cart';
 import { CartItemComponent } from '../cart-item/cart-item.component';
@@ -14,7 +14,7 @@ export class CartListComponent {
   pageTitle = 'Cart';
 
   // Updated: for DI of service for a StandAlone Component
-  private cartService = Inject(CartService);
+  private cartService = inject(CartService);
 
   cartItems = this.cartService.cartItems;
 }
